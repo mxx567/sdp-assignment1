@@ -13,17 +13,17 @@ abstract class Builder{
         this.name = name;
     }
 
-    abstract Builder genre();
+    abstract Builder genre(String value);
 
-    abstract Builder release_year();
+    abstract Builder release_year(int value);
 
-    abstract Builder engine();
+    abstract Builder engine(String value);
 
-    abstract Builder hasMultiplayer();
+    abstract Builder hasMultiplayer(boolean value);
 
-    abstract Builder hasSingleplayer(boolean hasSingleplayer);
+    abstract Builder hasSingleplayer(boolean value);
 
-    abstract Builder platform();
+    abstract Builder platform(String value);
 
     public Videogame build(){
         return new Videogame(this);
