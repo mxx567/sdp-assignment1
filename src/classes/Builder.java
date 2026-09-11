@@ -25,7 +25,19 @@ abstract class Builder{
 
     abstract Builder platform(String value);
 
-    public Videogame build(){
+    public Videogame build() {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+
+        if (release_year < 1970) {
+            throw new IllegalArgumentException("Invalid release year");
+        }
+
+        if (!hasSingleplayer && !hasMultiplayer) {
+            throw new IllegalStateException("Game must have singleplayer or multiplayer");
+        }
+
         return new Videogame(this);
     }
 }

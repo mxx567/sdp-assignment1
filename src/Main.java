@@ -8,4 +8,9 @@ void main() {
 
     System.out.println(racingGame);
     System.out.println(shooterGame);
+    try {
+        Videogame ng = dir.createMultiplayerRacingGame("");
+    }catch (Exception e){
+        System.out.println(e.getMessage());
+    }
 }
