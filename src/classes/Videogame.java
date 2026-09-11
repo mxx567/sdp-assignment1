@@ -1,3 +1,5 @@
+package classes;
+
 public class Videogame {
     private final String name;
     private final String genre;
@@ -12,4 +14,13 @@ public class Videogame {
                 + ", Has Multiplayer: " + hasMultiplayer + ", Platform: " + platform;
     }
 
+    protected Videogame(Builder builder){
+        this.name = builder.name;
+        this.genre = builder.genre;
+        this.release_year = builder.release_year;
+        this.engine = builder.engine;
+        this.hasMultiplayer = builder.hasMultiplayer;
+        this.hasSingleplayer = builder.hasSingleplayer;
+        this.platform = builder.platform;
+    }
 }
